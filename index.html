@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POMOKI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/pksin.png">
+</head>
+
+<body>
+    <section id="landing">
+        <img id="logo-landing" src="img/Logo.png" alt="POMOKI">
+        <p>¡Bienvenida a POMOKI, tu compañera de productividad! POMOKI es una aplicación
+            diseñada para ayudarte a manejar tu tiempo con la técnica Pomodoro. Puedes
+            poner temporizadores para tus sesiones de concentración y tomar descansos
+            regulares para mantenerte fresc@ y motivad@.</p>
+
+        <p>✨¡Empieza a organizar tu día con POMOKI!✨</p>
+        <img id="pinguino" src="img/pinguino_walk_240.gif" alt="Pinguino caminando">
+        <button id="boton-empezar">Empezar</button>
+    </section>
+
+    <section id="app" style="display: none;">
+        <div id="encabezado">
+            <div id="frase"></div>
+            <div id="saludo"></div>
+            <div id="reloj"></div>
+            <div id="fecha"></div>
+        </div>
+        <img class="nube nube1" src="img/nube.png" alt="">
+        <img class="nube nube2" src="img/nube.png" alt="">
+        <img class="nube nube3" src="img/nube.png" alt="">
+        <div id="checklist-container">
+            <input type="text" id="nueva-tarea" placeholder="Escribe una tarea...">
+            <button id="agregar-tarea">Agregar</button>
+            <p id="contador-tareas"></p>
+            <ul id="lista-tareas"></ul>
+        </div>
+
+        <div id="modal-fase" style="display: none;">
+            <div id="modal-fase-contenido">
+                <p id="modal-fase-mensaje"></p>
+                <button id="modal-fase-cerrar"> ¡Vamoooooos! </button>
+            </div>
+        </div>
+
+        <button id="boton-nota">+</button>
+        <div id="panel-nota" style="display: none;">
+            <input type="text" id="nueva-nota" placeholder="Escribe tu notita aqui...">
+            <div id="selector-colores">
+                <button class="color" data-color="#F5A623" style="background-color: #F5A623;"></button>
+                <button class="color" data-color="#7FB3C7" style="background-color: #7FB3C7;"></button>
+                <button class="color" data-color="#A8D5BA" style="background-color: #A8D5BA;"></button>
+                <button class="color" data-color="#F4A9A8" style="background-color: #F4A9A8;"></button>
+            </div>
+            <p class="titulo-selector"> Nivel de Prioridad</p>
+            <div id="selector-prioridad">
+                <button class="prioridad seleccionado" data-prioridad="ninguna">Normal</button>
+                <button class="prioridad" data-prioridad="media">Media</button>
+                <button class="prioridad" data-prioridad="alta">Alta</button>
+            </div>
+            <button id="guardar-nota">Guardar</button>
+        </div>
+        <img id="marca-pk" src="img/pkconpinguino.png" alt="">
+        <div id="centro">
+            <div id="zona-pomodoro">
+                <img id="pinguino-app" src="img/inactivo.png" alt="Pinguino">
+            </div>
+            <div id="pomodoro">
+                <div id="pomodoro-tiempo">25:00</div>
+                <div id="pomodoro-botones">
+                    <button id="pomodoro-iniciar">Iniciar</button>
+                    <button id="pomodoro-reiniciar">Reiniciar</button>
+                </div>
+                <div id="pomodoro-estado">Enfoque · Sesión 1</div>
+                <button id="pomodoro-config-abrir">⚙ Configurar</button>
+                <div id="pomodoro-config" style="display: none" ;>
+                    <label class="config-fila">
+                        <span>Enfoque</span>
+                        <input type="number" id="config-enfoque" min="1" max="90" value="25">
+                    </label>
+                    <label class="config-fila">
+                        <span>Descanso corto</span>
+                        <input type="number" id="config-descanso-corto" min="1" max="30" value="5">
+                    </label>
+                    <label class="config-fila">
+                        <span>Descanso largo</span>
+                        <input type="number" id="config-descanso-largo" min="1" max="60" value="25">
+                    </label>
+                    <label class="config-fila">
+                        <span>Sesiones hasta descanso largo</span>
+                        <input type="number" id="config-sesiones" min="1" max="10" value="4">
+                    </label>
+                    <button id="config-guardar">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="lista-notas"></div>
+
+        <div id="modal-alerta" style="display: none;">
+            <div id="modal-contenido">
+                <p id="modal-mensaje">¡OYE TUUUUUU, DEJA DE PROCASTINAR Y PONTE PRODUCTIV@! 😤</p>
+                <button id="modal-cerrar"> Ya, ya voy 😅 </button>
+            </div>
+        </div>
+
+        <div id="modal-editar" style="display: none;">
+            <div id="modal-editar-contenido">
+                <p id="modal-editar-titulo">Edita tu tarea</p>
+                <input type="text" id="input-editar">
+                <div id="modal-editar-botones">
+                    <button id="cancelar-edicion">Cancelar</button>
+                    <button id="guardar-edicion">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="pomoki.js"></script>
+</body>
+
+
+</html>

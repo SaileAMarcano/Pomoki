@@ -1,0 +1,36 @@
+{
+  "name": "pomoki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Adriana",
+  "license": "MIT",
+  "type": "commonjs",
+  "build": {
+    "appId": "com.adriana.pomoki",
+    "productName": "POMOKI",
+    "win": {
+      "target": "nsis",
+      "icon": "img/fondo1.ico"
+    },
+    "files": [
+      "index.html",
+      "style.css",
+      "pomoki.js",
+      "main.js",
+      "img/**/*",
+      "audio/**/*",
+      "fonts/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-builder": "^26.15.3"
+  }
+}

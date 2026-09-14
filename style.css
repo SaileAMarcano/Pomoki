@@ -1,0 +1,747 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Nunito:wght@400;600&display=swap');
+
+@font-face {
+    font-family: 'Bounce Dash';
+    src: url('fonts/Bounce Dash.otf') format('opentype');
+}
+
+:root {
+    --pomoki-naranja: #F97316;
+    --pomoki-morado: #A855F7;
+    --pomoki-azul: #3B82F6;
+    --pomoki-rosa: #F43F5E;
+    --pomoki-verde: #4CAF50;
+    --pomoki-amarillo: #FFC107;
+
+    --pomoki-gris: #A9A9A9;
+    --pomoki-blanco: #FFFFFF;
+    --pomoki-negro: #1A1A1A;
+    --pomoki-mejilla: #F8C8C0;
+}
+
+#landing {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+#logo-landing {
+    width: 920px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+#landing p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a4a4a;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #A8D0E6, #D6EAF2, #F4F9FC);
+    font-family: 'Nunito', sans-serif;
+    color: #1B3A4B;
+}
+
+#encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nube {
+    position: absolute;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+.nube1 {
+    top: 60px;
+    left: 400px;
+    width: 180px;
+    animation: flotar 60s linear infinite;
+}
+
+.nube2 {
+    top: 200px;
+    left: 200px;
+    width: 240px;
+    animation: flotar 90s linear infinite;
+    animation-delay: -30s;
+}
+
+.nube3 {
+    top: 400px;
+    left: 0px;
+    width: 150px;
+    animation: flotar 75s linear infinite;
+    animation-delay: -55s;
+}
+
+#boton-empezar {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: #f5a623;
+    color: #1B3A4B;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 40px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#boton-empezar:hover {
+    background-color: #ff8c42;
+}
+
+#reloj {
+    font-family: 'Bounce Dash', sans-serif;
+    font-size: 36px;
+    color: #1B3A4B;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#fecha {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    color: #7FB3C7;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#saludo {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    color: #7FB3C7;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+#frase {
+    font-family: 'Baloo 2', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #7FB3C7;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+#app {
+    padding: 40px 30px;
+    position: relative;
+    min-height: 100vh;
+}
+
+#checklist-container {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    width: 280px;
+    background-color: #D6EAF2;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+#contador-tareas {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 14px;
+    color: #7fb3c7;
+    margin: 14px 0 6px;
+}
+
+#centro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+#nueva-tarea,
+#nueva-nota {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #F4F9FC;
+    color: #1B3A4B;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#nueva-tarea:focus,
+#nueva-nota:focus {
+    outline: 2px solid #7FB3C7;
+}
+
+#agregar-tarea {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #1B3A4B;
+    color: #F4F9FC;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+#agregar-tarea:hover {
+    background-color: #7FB3C7;
+}
+
+#lista-notas {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#lista-notas div {
+    pointer-events: auto;
+    position: absolute;
+    cursor: grab;
+    background-color: #f5a623;
+    color: #1B3A4B;
+    padding: 14px;
+    border-radius: 4px;
+    width: max-content;
+    max-width: 400px;
+    min-width: 120px;
+    min-height: 100px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+}
+
+#lista-notas div span {
+    word-break: break-all;
+    min-width: 0;
+}
+
+#lista-notas div:active {
+    cursor: grabbing;
+}
+
+#lista-notas button {
+    font-family: 'Bounce Dash', sans-serif;
+    background-color: transparent;
+    border: none;
+    color: #1B3A4B;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: cente;
+    height: 20px;
+}
+
+#selector-prioridad {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+
+}
+
+.prioridad {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    background-color: #F4F9FC;
+    color: #1B3A4B;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.prioridad.seleccionado {
+    border-color: #1B3A4B;
+}
+
+.titulo-selector {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 12px;
+    color: #7FB3C7;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#lista-tareas {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 12px;
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+#lista-tareas li::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('/img/estrella.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+#lista-tareas li {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    cursor: pointer;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+#lista-tareas li span {
+    flex-grow: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+#lista-tareas button {
+    font-family: 'Bounce Dash', sans-serif;
+    background-color: transparent;
+    border: none;
+    color: #7FB3C7;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+}
+
+#lista-tareas button:hover {
+    color: #f5a623
+}
+
+#lista-tareas .boton-editar {
+    margin-left: auto;
+    margin-right: 10px;
+    color: #7FB3C7;
+    font-size: 16px;
+}
+
+#lista-tareas .boton-editar:hover {
+    color: #f5a623;
+}
+
+#lista-tareas::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lista-tareas::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#lista-tareas::-webkit-scrollbar-thumb {
+    background-color: #1B3A4B;
+    border-radius: 4px;
+}
+
+#lista-tareas::-webkit-scrollbar-thumb:hover {
+    background-color: #7FB3C7;
+}
+
+#boton-nota {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f5a623;
+    color: #1B3A4B;
+    border: none;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+#boton-nota:hover {
+    background-color: #ff8c42;
+}
+
+#panel-nota {
+    position: absolute;
+    top: 110px;
+    right: 30px;
+    background-color: #D6EAF2;
+    padding: 16px;
+    border-radius: 12px;
+    width: 240px;
+}
+
+#guardar-nota {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    background-color: #1B3A4B;
+    color: #F4F9FC;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    #checklist-container {
+        position: static;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    #reloj {
+        font-size: 50px;
+    }
+}
+
+#selector-colores {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.color {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.color.seleccionado {
+    border-color: #1B3A4B;
+}
+
+
+
+#modal-alerta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 58, 75, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#modal-contenido {
+    background-color: #F4F9FC;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 400px;
+}
+
+#modal-mensaje {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 22px;
+    color: #1B3A4B;
+    margin: 0 0 24px;
+}
+
+#modal-cerrar {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 18px;
+    background-color: #f5a623;
+    color: #1B3A4B;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+#pinguino {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 80px;
+    image-rendering: pixelated;
+    animation: caminar 15s linear infinite;
+}
+
+@keyframes caminar {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+#modal-editar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 58, 75, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#modal-editar-contenido {
+    background-color: #F4F9FC;
+    padding: 32px;
+    border-radius: 16px;
+    width: 320px;
+}
+
+#modal-editar-titulo {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    color: #1B3A4B;
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+#input-editar {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #D6EAF2;
+    color: #1B3A4B;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#input-editar:focus {
+    outline: 2px solid #7FB3C7;
+}
+
+#modal-editar-botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#cancelar-edicion,
+#guardar-edicion {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+#cancelar-edicion {
+    background-color: #D6EAF2;
+    color: #1B3A4B;
+}
+
+#guardar-edicion {
+    background-color: #f5a623;
+    color: #1B3A4B;
+}
+
+#pomodoro {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#pomodoro-tiempo {
+    font-family: 'Bounce Dash', sans-serif;
+    font-size: 150px;
+    color: #1B3A4B;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+#pomodoro-botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+#pomodoro-botones button {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 18px;
+    background-color: #f5a623;
+    color: #1B3A4B;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+#pomodoro-botones button:hover {
+    background-color: #ff8c42;
+}
+
+#pomodoro-estado {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 18px;
+    color: #7FB3C7;
+    text-align: center;
+    margin-top: 12px;
+}
+
+#modal-fase {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 58, 75, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#modal-fase-contenido {
+    background-color: #F4F9FC;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 400px;
+}
+
+#modal-fase-mensaje {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 22px;
+    color: #1B3A4B;
+    margin: 0 0 24px;
+}
+
+#modal-fase-cerrar {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 18px;
+    background-color: #f5a623;
+    color: #1B3A4B;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+#pomodoro-config-abrir {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 17px;
+    background-color: transparent;
+    color: #7FB3C7;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#pomodoro-config-abrir:hover {
+    color: #f5a623;
+}
+
+#pomodoro-config {
+    background-color: #D6EAF2;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 12px auto 0;
+    width: 280px;
+}
+
+.config-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #1B3A4B;
+    margin-bottom: 12px;
+    gap: 10px;
+    text-align: left;
+}
+
+.config-fila input {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    width: 60px;
+    padding: 6px 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: #F4F9FC;
+    color: #1B3A4B;
+    flex-shrink: 0;
+}
+
+#config-guardar {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    background-color: #1B3A4B;
+    color: #F4F9FC;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#pinguino-app {
+
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+#zona-pomodoro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#marca-pk {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#app {
+    min-height: auto;
+}
